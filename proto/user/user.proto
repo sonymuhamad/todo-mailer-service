@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package user;
+
+// --- language-specific options ---
+option java_multiple_files = true;
+option java_package = "com.sony.authservice.grpc";
+option java_outer_classname = "UserProto";
+
+// ✅ add this line for Go:
+option go_package = "github.com/sonymuhamad/todo-mailer-service/protogen/user;userpb";
+
+message GetUserByIDRequest  { string id    = 1; }
+message GetUserByIDResponse { string id    = 1; string email = 2; }
+
+service UserService {
+  rpc GetUserByID(GetUserByIDRequest) returns (GetUserByIDResponse);
+}

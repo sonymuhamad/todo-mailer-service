@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package task;
+
+option java_multiple_files = true;
+option java_package = "com.sony.taskservice.grpc";
+option java_outer_classname = "TaskProto";
+
+option go_package = "github.com/sonymuhamad/todo-mailer-service/protogen/task;taskpb";
+
+message GetTaskByIDRequest {
+  string id = 1;
+}
+
+message Todo {
+  string id = 1;
+  string name = 2;
+  string status = 3;
+}
+
+message TaskResponse {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string user_id = 4;
+  repeated Todo todos = 5;
+}
+
+service TaskService {
+  rpc GetTaskByID(GetTaskByIDRequest) returns (TaskResponse);
+}
