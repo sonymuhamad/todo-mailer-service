@@ -26,7 +26,7 @@ RUN apk --no-cache add ca-certificates
 COPY --from=builder /app/app .
 
 # Copy any required files (optional)
-COPY templates/ /app/templates
+COPY templates/ /root/templates
 
 # Command to run
 CMD ["./app"]
