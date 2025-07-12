@@ -1,0 +1,28 @@
+# Go build artifacts
+bin/
+*.exe
+*.test
+*.out
+
+# Git files
+.git
+.gitignore
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+
+# OS/system files
+.DS_Store
+Thumbs.db
+
+# Dependency cache
+vendor/
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
